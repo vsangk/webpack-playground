@@ -14,6 +14,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public/ui/v2'),
+    // publicPath: '/ui/v2',
   },
 
   resolve: {
@@ -41,9 +42,15 @@ module.exports = {
     ],
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'app/index.html',
-    }),
-  ],
+  //   plugins: [
+  //     new HtmlWebpackPlugin({
+  //       template: 'app/index.html',
+  //       filename: 'indexx.html',
+  //     }),
+  //   ],
+
+  devServer: {
+    // contentBase: './public/ui/v2',
+    hot: true,
+  },
 };
